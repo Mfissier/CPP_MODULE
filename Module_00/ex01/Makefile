@@ -1,6 +1,6 @@
 NAME = PhoneBook 
 
-SRC	= main.cpp functions.cpp menu.cpp
+SRC	= main.cpp functions.cpp menu.cpp menu_functions.cpp
 
 CC 	= c++
 
