@@ -10,6 +10,7 @@ OBJS = $(SRC:.c=.o)
 
 $(NAME): $(OBJS)
 	$(CC) $(FLAGS) $(SRC) -o $(NAME)
+	./PhoneBook "" ""
 
 all: $(NAME) $(OBJS)
 
