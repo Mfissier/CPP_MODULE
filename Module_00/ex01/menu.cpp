@@ -19,6 +19,9 @@ void    menu_phonebook(std::vector <Contact> PersonList, std::string prompt) {
         else if (prompt == "SEARCH") {
             std::system("clear");
             std::cout << "Send index :\n";
+            for (size_t i = 0; i < PersonList.size(); i++)
+                PersonList[i].display();
+            getline(std::cin, prompt);
             std::cin >> prompt;
         }
         else if (prompt == "EXIT") {

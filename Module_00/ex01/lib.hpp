@@ -26,15 +26,18 @@ class Contact {
         friend int affect_darkestSecret(Contact &Person, std::string &str);
 
         // menu_functions.cpp
-        friend int add_menu_firstName(std::vector <Contact> PersonList, std::string prompt);
-        friend int add_menu_lastName(std::vector <Contact> PersonList, std::string prompt);
-        friend int add_menu_nickname(std::vector <Contact> PersonList, std::string prompt);
-        friend int add_menu_phoneNumber(std::vector <Contact> PersonList, std::string prompt);
-        friend int add_menu_darkestSecret(std::vector <Contact> PersonList, std::string prompt);
+        friend void add_menu_firstName(std::vector <Contact> &PersonList, std::string prompt);
+        friend void add_menu_lastName(std::vector <Contact> &PersonList, std::string prompt);
+        friend void add_menu_nickname(std::vector <Contact> &PersonList, std::string prompt);
+        friend void add_menu_phoneNumber(std::vector <Contact> &PersonList, std::string prompt);
+        friend void add_menu_darkestSecret(std::vector <Contact> &PersonList, std::string prompt);
         void display() const;
-
-        
 };
+
+// menu.cpp
 void menu_phonebook(std::vector <Contact> PersonList, std::string prompt);
+
+//utils.cpp
+bool strisdigit(const std::string &str);
 
 #endif // MYCLASS_HPP

@@ -1,5 +1,4 @@
 #include "lib.hpp"
-#include <vector>
 
 int main(int ac, char **av) {
     Contact Person;
@@ -9,10 +8,6 @@ int main(int ac, char **av) {
     if (ac == 0)
         return (0);
     PersonList.push_back(Person);
-    affect_firstName(PersonList[0], content = av[1]);
-    affect_lastName(PersonList[0], content = av[2]);
-    menu_phonebook(PersonList, content = av[1]);
-    for (size_t i = 0; i < PersonList.size(); i++)
-        PersonList[i].display();        
+    menu_phonebook(PersonList, content = av[1]);    
     return 0;
 }
