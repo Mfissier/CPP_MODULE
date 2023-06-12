@@ -8,10 +8,7 @@ void add_menu_firstName(std::vector <Contact> &PersonList, std::string prompt) {
         while (error) {
             std::system("clear");
             std::cout << "Send Firstname:\n";
-            if (error == 2)
-                std::cout << "Error empty prompt !\n";
-            else if (error == 3)
-                std::cout << "Error system !\n";
+            send_error_menuadd(error);            
             getline(std::cin, prompt);
             if (!std::cin.good() || prompt.empty()) {
                 error = 1;
@@ -31,10 +28,7 @@ void add_menu_lastName(std::vector <Contact> &PersonList, std::string prompt) {
         while (error) {
             std::system("clear");
             std::cout << "Send Lastname:\n";
-            if (error == 2)
-                std::cout << "Error empty prompt !\n";
-            else if (error == 3)
-                std::cout << "Error system !\n";
+            send_error_menuadd(error);            
             getline(std::cin, prompt);
             if (!std::cin.good() || prompt.empty()) {
                 error = 1;
@@ -54,10 +48,7 @@ void add_menu_nickname(std::vector <Contact> &PersonList, std::string prompt) {
         while (error) {
             std::system("clear");
             std::cout << "Send Nickname:\n";
-            if (error == 2)
-                std::cout << "Error empty prompt !\n";
-            else if (error == 3)
-                std::cout << "Error system !\n";
+            send_error_menuadd(error);            
             getline(std::cin, prompt);
             if (!std::cin.good() || prompt.empty()) {
                 error = 1;
@@ -77,13 +68,16 @@ void add_menu_phoneNumber(std::vector <Contact> &PersonList, std::string prompt)
         while (error) {
             std::system("clear");
             std::cout << "Send Phone number:\n";
-            if (error == 2)
-                std::cout << "Error : Detect character\n";
+            send_error_menuadd(error);            
             getline(std::cin, prompt);
             if (!std::cin.good() || prompt.empty() || !strisdigit(prompt)) {
                 error = 1;
-                if (!strisdigit(prompt))
+                if (prompt.empty())
                     error = 2;
+                else if (!strisdigit(prompt))
+                    error = 4;
+                else
+                    error = 3;
             }
             else
                 error = 0;
@@ -96,12 +90,8 @@ void add_menu_darkestSecret(std::vector <Contact> &PersonList, std::string promp
         while (error) {
             std::system("clear");
             std::cout << "Send Darkest secret:\n";
-            if (error == 2)
-                std::cout << "Error empty prompt !\n";
-            else if (error == 3)
-                std::cout << "Error system !\n";
+            send_error_menuadd(error);
             getline(std::cin, prompt);
-
             if (!std::cin.good() || prompt.empty()) {
                 error = 1;
                 if (prompt.empty())

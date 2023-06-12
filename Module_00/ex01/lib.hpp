@@ -5,7 +5,7 @@
 #include <vector>
 #include <iostream>
 #include <cstdlib>
-
+#include <iomanip>
 
 class Contact {
     private :
@@ -25,6 +25,21 @@ class Contact {
         friend int affect_phoneNumber(Contact &Person, std::string &str);
         friend int affect_darkestSecret(Contact &Person, std::string &str);
 
+        std::string getfirstName() const { 
+            return (firstName); 
+        }
+        std::string getlastName() const { 
+            return (lastName); 
+        }
+        std::string getnickname() const { 
+            return (nickname); 
+        }
+        std::string getphoneNumber() const { 
+            return (phoneNumber); 
+        }
+        std::string getdarkestSecret() const { 
+            return (darkestSecret); 
+        }
         // menu_functions.cpp
         friend void add_menu_firstName(std::vector <Contact> &PersonList, std::string prompt);
         friend void add_menu_lastName(std::vector <Contact> &PersonList, std::string prompt);
@@ -35,9 +50,13 @@ class Contact {
 };
 
 // menu.cpp
-void menu_phonebook(std::vector <Contact> PersonList, std::string prompt);
+void    menu_phonebook(std::vector <Contact> PersonList, std::string prompt);
+
+// menu_display_functions.cpp
+void    display_all_contact(std::vector <Contact> PersonList);
 
 //utils.cpp
-bool strisdigit(const std::string &str);
+bool    strisdigit(const std::string &str);
+void    send_error_menuadd(int error);
 
-#endif // MYCLASS_HPP
+#endif

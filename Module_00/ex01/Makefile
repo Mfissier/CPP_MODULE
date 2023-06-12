@@ -4,6 +4,7 @@ SRC	= main.cpp \
 	  functions.cpp \
 	  menu.cpp \
 	  menu_add_functions.cpp \
+	  menu_display_functions.cpp \
 	  utils.cpp
 
 CC 	= c++
