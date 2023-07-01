@@ -54,6 +54,7 @@ void    menu_phonebook(std::vector <Contact> PersonList, std::string prompt);
 
 // menu_display_functions.cpp
 void    display_all_contact(std::vector <Contact> PersonList);
+void    display_contact(std::vector <Contact> PersonList, size_t idx);
 
 //utils.cpp
 bool    strisdigit(const std::string &str);

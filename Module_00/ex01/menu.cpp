@@ -14,6 +14,11 @@ void    menu_phonebook(std::vector <Contact> PersonList, std::string prompt) {
             std::cout << "Contact save !\n";
             if (PersonList.size() < 8)
                 PersonList.push_back(Person);
+            std::system("clear");
+            std::cout << "Main Menu :\n"
+            <<  "ADD : add new contact !\n"
+            <<  "SEARCH : list and search contact with index !\n"
+            <<  "EXIT : Leave this program !\n";
             std::cin >> prompt;
         }
         else if (prompt == "SEARCH") {
@@ -22,6 +27,8 @@ void    menu_phonebook(std::vector <Contact> PersonList, std::string prompt) {
             std::cout << "Send index :\n";
             getline(std::cin, prompt);
             std::cin >> prompt;
+            display_contact(PersonList, std::atoi(prompt.c_str()));
+            std::cin >> prompt;
         }
         else if (prompt == "EXIT") {
             std::system("clear");
@@ -29,10 +36,13 @@ void    menu_phonebook(std::vector <Contact> PersonList, std::string prompt) {
         }
         else {
             std::system("clear");
-            std::cout << "ERROR !\n";
+            std::cout << "Main Menu :\n"
+            <<  "ADD : add new contact !\n"
+            <<  "SEARCH : list and search contact with index !\n"
+            <<  "EXIT : Leave this program !\n";
             std::cin >> prompt;     
         }
-    }    
+    }
 }
 // Add cin.good(); | 
 // Check if empty;
