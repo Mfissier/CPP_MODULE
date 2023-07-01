@@ -44,7 +44,3 @@ void    menu_phonebook(std::vector <Contact> PersonList, std::string prompt) {
         }
     }
 }
-// Add cin.good(); | 
-// Check if empty;
-// Create menu_functions
-// Create search_functions
